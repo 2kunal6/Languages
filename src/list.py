@@ -46,7 +46,7 @@ if(len(l)>=20):
 print(l)
 
 
-l.extend([5, 50, 6, 'z'])
+l.extend([5, 50, 6, 50, 'z', 50])
 print(l)
 
 # slicing -----------------------------
@@ -60,3 +60,53 @@ print(l[::-1]) # reverse
 print(str(type(l[0])))
 new_l = [x/2 for x in l if type(x) is int]
 print(new_l)
+
+
+# Remove -------------------------------
+print(l)
+#l.remove(1000)
+l.remove(50)
+print(l)
+
+
+# Index ---------------------------------
+print(l.index(100))
+# print(l.index(100, 0, 2))
+
+# Count ---------------------------------
+print(l.count(50))
+print(l.count(-1000))
+
+# Sort only works if element types similar
+#l.sort()
+
+
+# Copy
+print(l)
+l2 = l # changes made to l2 will be reflected in l
+l2.pop()
+print(l)
+
+l2 = l.copy()
+l2.pop()
+print(l2)
+print(l)
+
+del l[1:3]
+print(l)
+
+l.clear()
+print(l)
+
+
+# List Comprehension
+cl = [(x, y) for x in (1, 2, 3) for y in (2, 4) if x!=y]
+print(cl)
+
+l = [1, -1, 4, 2, -5]
+nl = [x for x in l if x<0]
+print(nl)
+
+mat = [[1, 2, 3],
+       [4, 5, 6]]
+print([x for n in mat for x in n])
