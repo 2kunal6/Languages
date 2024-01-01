@@ -1,5 +1,6 @@
 # We can use any immutable data types as key to Python Dictionaries
 # Ex. Tuple, Boolean, String etc.
+# but only if the Tuple does not contain any mutable type
 
 dict = {}
 dict['c'] = 1
@@ -25,5 +26,5 @@ print(int_dict)
 
 # Not Possible since list is mutable
 list_dict = {}
-list_dict[[1, 2, 3]] = 1
-list_dict[[1, 2, 3, 4]] = 1
+#list_dict[[1, 2, 3]] = 1
+#list_dict[[1, 2, 3, 4]] = 1
