@@ -5,6 +5,9 @@ print('basic' in str)
 print('bAsic' in str)
 print('bAsic'.lower() in str.lower())
 print(str.find('basic'))
+new_str = 'abcjhabjd'
+print(new_str.find('ab'))
+print(new_str.find('ab', 1))
 
 # substring -------------------------------------
 
