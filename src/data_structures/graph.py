@@ -14,6 +14,7 @@ def insert(v1, v2):
 
 
 def bfs():
+    print('bfs:')
     vis = {}
     for v in g:
         if(v in vis):
@@ -29,6 +30,25 @@ def bfs():
             for item in g[val]:
                 q.append(item)
 
+def dfs():
+    print('dfs')
+    vis = {}
+    for v in g:
+        if(v in vis):
+            continue
+        stack = []
+        stack.append(v)
+        while(len(stack) > 0):
+            val = stack.pop()
+            if(val in vis):
+                continue
+            vis[val] = True
+            print(val)
+            for neigh in g[val]:
+                stack.append(neigh)
+
+
+
 insert(1, 2)
 insert(2, 5)
 insert(1, 6)
@@ -37,3 +57,4 @@ insert(-1, 3)
 insert(1, 7)
 
 bfs()
+dfs()
