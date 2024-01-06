@@ -48,6 +48,21 @@ def dfs():
                 stack.append(neigh)
 
 
+def dfs_r(v, vis):
+    if(v in vis):
+        return
+    print(v)
+    vis[v] = True
+    for val in g[v]:
+        dfs_r(val, vis)
+
+def dfs_recursive():
+    print('dfs recursive')
+    vis = {}
+    for v in g:
+        if(v not in vis):
+            dfs_r(v, vis)
+
 
 insert(1, 2)
 insert(2, 5)
@@ -57,4 +72,5 @@ insert(-1, 3)
 insert(1, 7)
 
 bfs()
+dfs_recursive()
 dfs()
