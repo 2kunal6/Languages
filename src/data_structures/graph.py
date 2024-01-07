@@ -25,10 +25,11 @@ def bfs():
             val = q.popleft()
             if(val in vis):
                 continue
-            print(val)
+            print(val, end = ' ')
             vis[val] = True
             for item in g[val]:
                 q.append(item)
+    print()
 
 def dfs():
     print('dfs')
@@ -43,15 +44,15 @@ def dfs():
             if(val in vis):
                 continue
             vis[val] = True
-            print(val)
+            print(val, end = ' ')
             for neigh in g[val]:
                 stack.append(neigh)
-
+    print()
 
 def dfs_r(v, vis):
     if(v in vis):
         return
-    print(v)
+    print(v, end = ' ')
     vis[v] = True
     for val in g[v]:
         dfs_r(val, vis)
@@ -74,3 +75,61 @@ insert(1, 7)
 bfs()
 dfs_recursive()
 dfs()
+
+
+# directed graph ----------------------------------
+print('directed')
+dg = {}
+
+def insert(v1, v2):
+    if(v1 not in dg):
+        dg[v1] = []
+    if(v2 not in dg):
+        dg[v2] = []
+    dg[v1].append(v2)
+
+insert(1, 2)
+insert(2, 5)
+insert(1, 6)
+insert(3, 2)
+insert(-1, 3)
+insert(7, 1)
+
+def bfs_d():
+    vis = {}
+    q = deque()
+    for v in dg:
+        if(v in vis):
+            continue
+        q.append(v)
+        while(len(q) > 0):
+            val = q.popleft()
+            if(val in vis):
+                continue
+            print(val, end = ' ')
+            vis[val] = True
+            for nb in dg[val]:
+                q.append(nb)
+    print()
+
+
+def dfs_d():
+    vis = {}
+    stk = []
+    for v in dg:
+        if(v in vis):
+            continue
+        stk.append(v)
+        while(len(stk) > 0):
+            val = stk.pop()
+            if(val in vis):
+                continue
+            vis[val] = True
+            print(val, end = ' ')
+            for nb in dg[val]:
+                stk.append(nb)
+    print()
+
+
+bfs_d()
+dfs_d()
