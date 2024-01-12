@@ -1,6 +1,7 @@
 # We can use any immutable data types as key to Python Dictionaries
 # Ex. Tuple, Boolean, String etc.
 # but only if the Tuple does not contain any mutable type
+# Multimap equivalent: use dict and a list as the value
 
 dict = {}
 dict['c'] = 1

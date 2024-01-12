@@ -110,3 +110,10 @@ print(nl)
 mat = [[1, 2, 3],
        [4, 5, 6]]
 print([x for n in mat for x in n])
+
+
+# List of List
+ll = []
+ll.append([1, 2])
+ll.append([3, 4])
+print(ll[1][1])
