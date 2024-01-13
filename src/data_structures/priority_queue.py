@@ -65,3 +65,32 @@ for val in mpq_list:
 while(not max_pq_minus_1.empty()):
     print(-1*max_pq_minus_1.get(), end=' ')
 print()
+
+
+# PQ of pair
+pq_pair = PriorityQueue()
+pq_pair.put([5, 8])
+pq_pair.put([1, 2])
+pq_pair.put([10, 30])
+while(not pq_pair.empty()):
+    print(pq_pair.get())
+
+
+class MaxPQpair:
+    def __init__(self, v1, v2):
+        self.v1 = v1
+        self.v2 = v2
+
+    # if we use __gt__ then we need to use the condition self.v1 < other.v1
+    def __lt__(self, other):
+        return self.v1 > other.v1
+
+    def __str__(self):
+        return str(self.v1) + ' ' + str(self.v2)
+
+max_pq_pair = PriorityQueue()
+max_pq_pair.put(MaxPQpair(5, 8))
+max_pq_pair.put(MaxPQpair(1, 2))
+max_pq_pair.put(MaxPQpair(10, 10))
+while(not max_pq_pair.empty()):
+    print(max_pq_pair.get())
