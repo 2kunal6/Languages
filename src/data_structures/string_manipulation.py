@@ -26,3 +26,11 @@ print(str(-100))
 #print(int('-102.5')) invalid
 print(int('-102'))
 print(float('-102.5'))
+
+
+# strip
+space_str = '   aaa   '
+print(space_str)
+print(space_str.lstrip())
+print(space_str.rstrip())
+print(space_str.strip())
