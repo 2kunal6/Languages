@@ -34,3 +34,9 @@ print(space_str)
 print(space_str.lstrip())
 print(space_str.rstrip())
 print(space_str.strip())
+
+
+#split
+split_str = 'abc def hij,efm'
+print(split_str.split())
+print(split_str.split(','))
