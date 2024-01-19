@@ -114,6 +114,13 @@ print([x for n in mat for x in n])
 
 # List of List
 ll = []
-ll.append([1, 2])
-ll.append([3, 4])
+ll.append([5, 2])
+ll.append([3, 5])
+ll.append([1, 1])
+ll.append([20, 6])
+ll.append([-3, 10])
 print(ll[1][1])
+ll.sort()
+print(ll)
+ll.sort(key=lambda x:x[1])
+print(ll)
