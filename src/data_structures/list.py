@@ -124,3 +124,13 @@ ll.sort()
 print(ll)
 ll.sort(key=lambda x:x[1])
 print(ll)
+
+
+# Reverse
+a = ["foo", "bar", "baz"]
+for i in reversed(a):
+    print(i)
+for item in l[::-1]:
+    print(item)
+for i in range(len(l)-1, -1, -1):
+    print(l[i])
