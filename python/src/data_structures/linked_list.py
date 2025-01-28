@@ -1,34 +1,36 @@
-class Node:
-    def __init__(self, data):
-        self.val = data
+class LinkedList:
+    def __init__(self, val):
+        self.val = val
         self.next = None
 
+
 def print_ll(head):
-    while(head != None):
-        print(head.val)
+    while (head != None):
+        print(head.val, end=' ')
         head = head.next
+    print()
 
-def insert_at_begin(head, data):
-    new_node = Node(data)
-    if(head == None):
-        head = new_node
-    else:
-        new_node.next = head
-        head = new_node
-    return head
 
-head = None
+def append(head, val):
+    node = LinkedList(val)
+    while (head.next != None):
+        head = head.next
+    head.next = node
+
+
+def reverse(head):
+    prev = None
+    while (head != None):
+        temp = head.next
+        head.next = prev
+        prev = head
+        head = temp
+    return prev
+
+
+head = LinkedList(1)
 print_ll(head)
-head = insert_at_begin(head, 5)
+append(head, 2)
 print_ll(head)
-
-# practice other methods
-# insert_at_index
-# insert_at_end
-# update_node
-# remove_first_node
-# remove_last_node
-# remove_node_at_index
-# remove_nodes_with_value
-# size_of_ll
-
+head = reverse(head)
+print_ll(head)
