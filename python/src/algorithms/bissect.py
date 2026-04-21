@@ -24,3 +24,7 @@ print(bisect_right(sorted_list, 5, 2, 2))
 print(bisect_right(sorted_list, 10, 0, 1))
 print(bisect_right(sorted_list, 10, 0, 2))
 print(bisect_left(sorted_list, 10, 0, 1))
+
+print('bisect list of lists')
+l = [[1,2], [4,5], [4,7]]
+print(bisect_left(l, 3, key=lambda x:x[0]))
